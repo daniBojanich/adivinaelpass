@@ -20,23 +20,20 @@ function LogIn() {
     "dale Joni ponele voluntad.",
     "la gente se debate entre membrillo o dulce de batata.",
     "es una PASTAFROLA.",
-    "Con solo la P en mayúscula."
+    "Con solo la P en mayúscula.",
   ];
 
-  const handleSubmit = (e) => {
+  const Enviar = (e) => {
     e.preventDefault();
 
     if (password === "Pastafrola") {
       setRespuesta("¡Acertaste!");
     } else {
       setRespuesta("Esa no es la contraseña.");
+      botonPistas.style= "display: block";
     }
   };
-let HacerAlgo =()=>{
-  
-    return <div> {pistas[pistaIndex]} </div>;
-  
-}
+
   const handleNombreChange = (e) => {
     setNombre(e.target.value);
   };
@@ -47,20 +44,23 @@ let HacerAlgo =()=>{
 
   const handleMostrarPista = () => {
     setMostrarPista(true);
+    botonPistas.style= "display: none";
+
   };
 
   const handleSiguientePista = () => {
     if (pistaIndex < pistas.length - 1) {
       setpistaIndex((prevIndex) => prevIndex + 1);
+    
     }
   };
 
   return (
     <>
-    
-      <p className="saludo">{nombre!="" ? "hola " + nombre + "!!": ""}</p>
+      <p className="saludo">{nombre != "" ? "hola " + nombre + "!!" : ""}</p>
       <div className="inputs">
-        <FontAwesomeIcon icon={faUser} className="inputInterno"/> <input
+        <FontAwesomeIcon icon={faUser} className="inputInterno" />{" "}
+        <input
           type="text"
           placeholder="Ingresa tu nombre"
           value={nombre}
@@ -68,36 +68,45 @@ let HacerAlgo =()=>{
           className="inputInterno"
         />
       </div>
+
     
-      <form onSubmit={handleSubmit}>
-      
         <div className="inputs">
-        <FontAwesomeIcon icon={faLock} className="inputInterno" />
-        <input
-          type="password"
-          placeholder="Ingresa la contraseña"
-          value={password}
-          onChange={handlePasswordChange}
-          className="inputInterno"
-        /></div>
-        
-        <button className="ingresar">Iniciar Sesión</button>
-      </form>
+          <FontAwesomeIcon icon={faLock} className="inputInterno" />
+          <input
+            type="password"
+            placeholder="Ingresa la contraseña"
+            value={password}
+            onChange={handlePasswordChange}
+            className="inputInterno"
+          />
+        </div>
+
+        <button onClick={Enviar} className="ingresar">Iniciar Sesión</button>
+    
 
       <p className="respuesta">{Respuesta}</p>
 
-      
-      {!Respuesta && MostrarPista && <button className="botonChico" onClick={handleMostrarPista}>¿Necesitas una pista?</button>}
+      {/* {!Respuesta && MostrarPista && (
+        <button className="botonChico" onClick={handleMostrarPista}>
+          ¿Necesitas una pista?
+        </button>
+      )} */}
 
-      {Respuesta != "Pastafrola" || "" ? <button className="botonChico" onClick={handleMostrarPista}>¿Necesitas una pista?</button> : null}
-{MostrarPista && ( 
+      {Respuesta != "Pastafrola" || "" ? (
+        <button style= {{display: 'none'}} id="botonPistas" className="botonChico" data-soyyo="boton que quiero" onClick={handleMostrarPista}>
+          ¿Necesitas una pista?
+        </button>
+      ) : null}
+      {MostrarPista && (
         <>
-          {pistaIndex < pistas.length - 1 && <button className="botonChico" onClick={handleSiguientePista}>Mostrar Siguiente Pista</button>}<p className="pistas" >{pistas[pistaIndex]}</p>
+          {pistaIndex < pistas.length - 1 && (
+            <button className="botonChico" onClick={handleSiguientePista}>
+              Mostrar Siguiente Pista
+            </button>
+          )}
+          <p className="pistas">{pistas[pistaIndex]}</p>
         </>
       )}
-
-
-
     </>
   );
 }
