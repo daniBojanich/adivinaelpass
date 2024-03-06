@@ -20,7 +20,7 @@ function LogIn() {
     "dale Joni ponele voluntad.",
     "la gente se debate entre membrillo o dulce de batata.",
     "es una PASTAFROLA.",
-    "Con la P mayúscula."
+    "Con solo la P en mayúscula."
   ];
 
   const handleSubmit = (e) => {
@@ -32,7 +32,11 @@ function LogIn() {
       setRespuesta("Esa no es la contraseña.");
     }
   };
-
+let HacerAlgo =()=>{
+  
+    return <div> {pistas[pistaIndex]} </div>;
+  
+}
   const handleNombreChange = (e) => {
     setNombre(e.target.value);
   };
@@ -54,7 +58,7 @@ function LogIn() {
   return (
     <>
     
-      <p className="saludo">Hola {nombre}</p>
+      <p className="saludo">{nombre!="" ? "hola " + nombre + "!!": ""}</p>
       <div className="inputs">
         <FontAwesomeIcon icon={faUser} className="inputInterno"/> <input
           type="text"
@@ -82,14 +86,15 @@ function LogIn() {
 
       <p className="respuesta">{Respuesta}</p>
 
-      {MostrarPista && (
+      
+      {!Respuesta && MostrarPista && <button className="botonChico" onClick={handleMostrarPista}>¿Necesitas una pista?</button>}
+
+      {Respuesta != "Pastafrola" || "" ? <button className="botonChico" onClick={handleMostrarPista}>¿Necesitas una pista?</button> : null}
+{MostrarPista && ( 
         <>
-          
-          {pistaIndex < pistas.length - 1 && <button className="botonChico" onClick={handleSiguientePista}>Mostrar Siguiente Pista</button>}<p>{pistas[pistaIndex]}</p>
+          {pistaIndex < pistas.length - 1 && <button className="botonChico" onClick={handleSiguientePista}>Mostrar Siguiente Pista</button>}<p className="pistas" >{pistas[pistaIndex]}</p>
         </>
       )}
-      {!Respuesta && !MostrarPista && <button className="botonChico" onClick={handleMostrarPista}>¿Necesitas una pista?</button>}
-
 
 
 

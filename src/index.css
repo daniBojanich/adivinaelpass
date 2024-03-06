@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: blinker;
 }
+
 #root {
   display: flex;
   flex-direction: column;
@@ -12,4 +13,9 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(153.21deg, #dec4fc 1.34%, #91c6fc 96.22%);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -7,46 +7,67 @@
   height: 40px;
   width: 240px;
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.05);
-  color:#161616;
+  color: #161616;
   margin: 15px;
   font-size: 12px;
-
 }
-.inputInterno{
+.inputInterno {
   border: 0px;
   background-color: transparent;
   padding: 15px;
+  border: none;
 }
-.ingresar{
+.inputInterno :focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-color: inherit;
+}
+.ingresar {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #6A74CF;
-  color: #FFF;
+  background-color: #6a74cf;
+  color: #fff;
   border-radius: 67px;
   height: 40px;
   width: 240px;
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.05);
   margin: 15px;
   border: 0px;
+  &:active {
+    background-color: #3d48a5;
+  }
 }
-.saludo{
+.saludo {
   color: #fff;
   font-size: 24px;
   font-weight: 600;
 }
-.respuesta{
+.respuesta {
   color: #161616;
 }
 
-.botonChico{
+.botonChico {
   background-color: #fff;
-  border: solid 1px #6A74CF;
-  color: #6A74CF;
+  border: solid 1px #6a74cf;
+  color: #6a74cf;
   text-align: center;
   border-radius: 67px;
   height: 29px;
   width: 154px;
   margin-top: 25px;
+  &:active {
+    background-color: #6a74cf;
+    color: #fff;
+    border-color: #fff;
+  }
+}
 
+.pistas {
+  color: #2a2a2a;
+  margin-top: 15px !important;
+
+  width: 240px;
+  text-align: center;
 }
