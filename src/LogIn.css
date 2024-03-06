@@ -1,0 +1,52 @@
+.inputs {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 67px;
+  height: 40px;
+  width: 240px;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.05);
+  color:#161616;
+  margin: 15px;
+  font-size: 12px;
+
+}
+.inputInterno{
+  border: 0px;
+  background-color: transparent;
+  padding: 15px;
+}
+.ingresar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6A74CF;
+  color: #FFF;
+  border-radius: 67px;
+  height: 40px;
+  width: 240px;
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.05);
+  margin: 15px;
+  border: 0px;
+}
+.saludo{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+.respuesta{
+  color: #161616;
+}
+
+.botonChico{
+  background-color: #fff;
+  border: solid 1px #6A74CF;
+  color: #6A74CF;
+  text-align: center;
+  border-radius: 67px;
+  height: 29px;
+  width: 154px;
+  margin-top: 25px;
+
+}
